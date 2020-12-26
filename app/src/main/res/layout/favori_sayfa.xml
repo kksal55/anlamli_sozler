@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/arka">
+
+    <ImageView
+        android:id="@+id/resim_baslik"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_alignParentTop="true"
+        android:maxWidth="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bilmecebaslik"
+        />
+
+    <ImageButton
+        android:id="@+id/btn_anasayfa_img"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="1dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:scaleType="center"
+        android:layout_below="@+id/resim_baslik"
+        android:src="@android:drawable/ic_menu_revert" />
+    <TextView
+        android:id="@+id/text_fikralar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_anasayfa_img"
+        android:layout_alignRight="@+id/resim_baslik"
+        android:layout_marginRight="20dp"
+        android:text="-"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/listview_bilmeceler"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/btn_anasayfa_img"
+        android:layout_above="@+id/adView"
+        android:dividerHeight="2dp"
+        android:overScrollHeader="@drawable/bilmecebaslik" >
+
+    </ListView>
+
+
+    <com.google.android.gms.ads.AdView android:id="@+id/adView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        ads:adUnitId="ca-app-pub-8786191356169416/3432333507"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>

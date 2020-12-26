@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/member_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/member_icerik"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/sekil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:text="\u25C9"
+        android:paddingRight="5dp"
+        android:textColor="#FFFFFF"
+        android:padding="4dp"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/member_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="3dp"
+        android:gravity="left"
+        android:textSize="17sp"
+        android:text="deneme"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#7000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="8"
+        android:maxLength="30"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/member_name2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:gravity="left"
+        android:textSize="17sp"
+        android:text="..."
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:shadowColor="#7000"
+        android:shadowDx="12"
+        android:shadowDy="12"
+        android:shadowRadius="8"
+        android:textStyle="bold"/>
+
+</LinearLayout>

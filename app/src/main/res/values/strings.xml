@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Anlamlı Sözler</string>
+
+    <string name="rateme__dialog_first_title">Uygulamayı Puanla</string>
+    <string name="rateme__dialog_first_message">Uygulamaya Puan Vermek İster misiniz?</string>
+    <string name="rateme__dialog_first_button_rate">Google playde puan ver</string>
+    <string name="rateme__dialog_first_thanks">Puan için teşekkürler!</string>
+    <string name="rateme__dialog_feedback_message">Uygulama için fikir belirtmek ister misiniz?</string>
+    <string name="rateme__email_subject">%1$s için düşünce</string>
+    <string name="rateme__icon_content_description">Icon</string>
+
+
+</resources>

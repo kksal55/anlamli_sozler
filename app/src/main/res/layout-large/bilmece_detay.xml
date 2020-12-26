@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout 
+   android:id="@+id/RelativeLayout_detay"
+   xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:ads="http://schemas.android.com/apk/res-auto"
+   android:layout_width="fill_parent"
+   android:layout_height="match_parent"
+   android:background="@drawable/arka"
+>
+     
+     
+    
+    <ImageView
+                    android:id="@+id/resim_baslik"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"   
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/bilmecebaslik" />
+    <ImageButton
+        android:id="@+id/sms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="44dp"
+        android:height="41dp"
+        android:layout_alignBottom="@+id/btn_anasayfa_img"
+        android:layout_alignRight="@+id/what"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/resim_baslik"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:src="@drawable/sms" />
+    <ImageButton
+        android:id="@+id/what"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="44dp"
+        android:height="41dp"
+        android:layout_alignBottom="@+id/btn_anasayfa_img"
+        android:layout_alignRight="@+id/face"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/resim_baslik"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:src="@drawable/what" />
+
+    <ImageButton
+        android:id="@+id/face"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="44dp"
+        android:height="41dp"
+        android:visibility="gone"
+        android:layout_alignBottom="@+id/btn_anasayfa_img"
+        android:layout_alignRight="@+id/btn_hit_ekle"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/resim_baslik"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:src="@drawable/face" />
+    <ImageButton
+                     android:id="@+id/btn_hit_ekle"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:width="44dp"
+                     android:height="41dp"
+                     android:layout_alignBottom="@+id/btn_anasayfa_img"
+                     android:layout_alignRight="@+id/btn_ara"
+                     android:layout_marginRight="40dp"
+                     android:layout_below="@+id/resim_baslik"
+                     android:background="@android:drawable/status_bar_item_app_background"
+                     android:src="@drawable/btn_star_big_off" />
+                 
+                <ImageButton
+                     android:id="@+id/btn_ara"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:layout_alignBottom="@+id/btn_anasayfa_img"
+                     android:layout_alignRight="@+id/paylas"
+                     android:layout_below="@+id/resim_baslik"
+                     android:layout_marginRight="40dp"
+                     android:background="@android:drawable/status_bar_item_app_background"
+                     android:src="@android:drawable/ic_menu_search" />
+    <ImageButton
+        android:id="@+id/paylas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_anasayfa_img"
+        android:layout_alignRight="@+id/menu"
+        android:layout_below="@+id/resim_baslik"
+        android:layout_marginRight="40dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:src="@android:drawable/ic_menu_share" />
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btn_anasayfa_img"
+        android:layout_alignRight="@+id/realscrl"
+        android:layout_below="@+id/resim_baslik"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:src="@drawable/ic_settings_ok" />
+
+
+    <Button
+        android:id="@+id/btn_tum_bilmeceler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:text="Bu kategorideki tüm bilmeceler"
+        android:visibility="gone"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_below="@+id/adView"
+        style="@style/dar"
+
+        />
+
+<!--    <RelativeLayout
+        android:id="@+id/bil_anagurup"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_below="@+id/adView">-->
+
+
+    <ImageButton
+        android:id="@+id/btn_anasayfa_img"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:scaleType="center"
+        android:src="@android:drawable/ic_menu_revert"
+        android:layout_below="@+id/resim_baslik"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <!--        </RelativeLayout>-->
+
+    <RelativeLayout
+        android:id="@+id/bil_gurup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@+id/btn_hit_ekle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <TableLayout
+        android:id="@+id/detay_baslik_tablo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:shrinkColumns="*"
+        android:stretchColumns="*"
+        android:background="@drawable/sorutablo"
+        >
+    <TableRow>
+        <TextView
+            android:id="@+id/detay_baslik"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="detay başlık"
+            android:layout_margin="5dp"
+            android:textColor="#fffce5"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            />
+    </TableRow></TableLayout>
+
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/btn_resim_cek"
+        android:layout_height="50dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+        android:src="@drawable/scr"
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+    <RelativeLayout
+        android:id="@+id/realscrl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/altgurup"
+        android:gravity="center_horizontal"
+        android:background="@drawable/arkaorta"
+        android:layout_below="@+id/menu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="false"
+        android:gravity="center_horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <TextView
+        android:id="@+id/detay_fikra"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="15dp"
+        android:text="detay fıkra"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:layout_width="match_parent"
+        android:textStyle="normal"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bil_gurup"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    </ScrollView>
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/altgurup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_above="@+id/adView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ImageButton
+            android:id="@+id/yazieksi"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@android:drawable/status_bar_item_app_background"
+            android:src="@drawable/akucult"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"/>
+
+        <ImageButton
+            android:id="@+id/yaziarti"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/yazieksi"
+            android:layout_alignRight="@+id/yazieksi"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/abuyult"
+            android:background="@android:drawable/status_bar_item_app_background"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/karisik"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/yaziarti"
+            android:layout_alignRight="@+id/yaziarti"
+            android:layout_marginRight="40dp"
+            android:src="@drawable/duz"
+            android:background="@android:drawable/status_bar_item_app_background"
+            android:scaleType="fitCenter" />
+
+        <Button
+            android:id="@+id/kopyala"
+            android:layout_width="wrap_content"
+            android:layout_height="30sp"
+            android:layout_centerHorizontal="true"
+            android:text="Kopyala"
+            android:visibility="visible"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            style="@style/acik_mavi"
+            />
+        <ImageButton
+            android:id="@+id/tum_kay"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/yazieksi"
+            android:layout_alignLeft="@+id/font"
+            android:layout_marginLeft="40dp"
+            android:src="@drawable/list"
+            android:background="@android:drawable/status_bar_item_app_background"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/font"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@android:drawable/status_bar_item_app_background"
+            android:src="@drawable/font"
+            android:scaleType="fitCenter"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView android:id="@+id/adView"
+           android:layout_width="fill_parent"
+           android:layout_height="wrap_content"
+        ads:adUnitId="ca-app-pub-8786191356169416/3432333507"
+           ads:adSize="FULL_BANNER"
+        android:layout_above="@+id/btn_onceki_fikra"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+                     android:id="@+id/btn_sonraki_fikra"
+                     android:layout_width="wrap_content"
+                     android:layout_height="50dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+                     android:src="@drawable/ileri"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btn_resim_cek"
+        android:layout_toEndOf="@+id/btn_resim_cek" />
+
+    <ImageButton
+         android:id="@+id/btn_onceki_fikra"
+         android:layout_width="wrap_content"
+         android:layout_height="50dp"
+        android:background="@android:drawable/status_bar_item_app_background"
+         android:src="@drawable/geri"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/btn_resim_cek"
+        android:layout_toStartOf="@+id/btn_resim_cek" />
+
+</RelativeLayout>
+

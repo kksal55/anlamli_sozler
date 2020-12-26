@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:padding="10dp"
+    android:background="@drawable/arka">
+
+ <TextView
+        android:id="@+id/text_fikralar_arama"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="gelen"
+        android:visibility="gone"
+        />
+
+<ImageView
+            android:id="@+id/resim_baslik"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="300sp"
+            android:scaleType="fitXY" 
+            android:src="@drawable/bilmecebaslik"
+             />    
+             
+  <ImageButton
+                    android:id="@+id/btn_anasayfa_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:background="@android:drawable/status_bar_item_app_background"
+                    android:scaleType="center"
+                    android:src="@android:drawable/ic_menu_revert" />
+  
+  
+    <ListView
+        android:id="@+id/listview_fikralar_arama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="2dp" >
+    </ListView>
+    
+ 
+    
+</LinearLayout>    

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/arka">
+
+    <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+
+            <ImageView
+                android:id="@+id/menuViewButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="0dp"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/imageView_baslik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_margin="5dp"
+                android:src="@drawable/bilmecebaslik" >
+            </ImageView>
+
+
+            <View
+                android:id="@+id/cizgi"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/imageView_baslik"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="#bbbbbb" />
+            <CheckBox android:id="@+id/checkbox_kal_bil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continuar con la última Chistes"
+                android:onClick="onCheckboxClicked"
+                android:layout_below="@id/cizgi"
+                android:visibility="gone"
+                android:checked="true" />
+
+        </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_below="@+id/imageView_baslik"
+        android:layout_marginBottom="10dp">
+
+
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:shrinkColumns="*"
+        android:stretchColumns="*">
+    <TableRow>
+        <Button
+            android:id="@+id/btn_karisik"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Rastgele Anlamlı Söz"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            style="@style/acik_mavi"
+            android:drawableLeft="@drawable/kari"
+            android:textSize="20sp"
+            android:visibility="gone"/>
+
+    </TableRow>
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/btn_tumu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/status_bar_item_app_background"
+                android:scaleType="center"
+                android:src="@drawable/asozler"
+                android:layout_below="@+id/resim_baslik"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </TableRow>
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/btn_devam_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/status_bar_item_app_background"
+                android:scaleType="center"
+                android:src="@drawable/soku"
+                android:layout_below="@+id/resim_baslik"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </TableRow>
+        <TableRow>
+            <ImageButton
+                android:id="@+id/btn_favori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/status_bar_item_app_background"
+                android:scaleType="center"
+                android:src="@drawable/fav"
+                android:layout_below="@+id/resim_baslik"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </TableRow>
+        <TableRow>
+
+            <ImageButton
+                android:id="@+id/btn_yildiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/status_bar_item_app_background"
+                android:scaleType="center"
+                android:src="@drawable/puanver"
+                android:layout_below="@+id/resim_baslik"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </TableRow>
+        <TableRow>
+            <ImageButton
+                android:id="@+id/btn_cikis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/status_bar_item_app_background"
+                android:scaleType="center"
+                android:src="@drawable/cikis"
+                android:layout_below="@+id/resim_baslik"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </TableRow>
+    </TableLayout></ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '28.0.3'
+    compileOptions.encoding "windows-1254"
+    defaultConfig {
+        applicationId "com.kksal55.anlamli_sozler"
+        minSdkVersion 11
+        targetSdkVersion 26
+        versionCode 10
+        versionName "1.10.ANLAMLI.SOZ"
+        multiDexEnabled true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.google.android.gms:play-services:9.6.1'
+    implementation 'com.android.support:multidex:1.0.0'
+    implementation 'com.github.kksal55:rate-me:b3fcae7'
+
+}

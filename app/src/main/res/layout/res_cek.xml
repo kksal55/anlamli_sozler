@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    >
+<LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/linear"
+    android:layout_marginBottom="50dp"
+    android:layout_marginTop="50dp"
+    android:background="@drawable/arka_foto">
+
+    <ImageView
+        android:id="@+id/resim_baslik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/bilmecebaslik" />
+
+    <com.kksal55.anlamli_sozler.AutoFitText
+        android:id="@+id/detay_fikra"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="70dp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp"
+        android:layout_marginTop="30sp"
+        android:text="detay fıkra"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/detay_baslik"
+        android:background="#0000ff"
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Hadi Bil Bakalım"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+
+</LinearLayout>
+</RelativeLayout>

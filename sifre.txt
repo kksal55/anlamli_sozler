@@ -1,0 +1,5 @@
+            sonuc = (((random_sayi * (sayitoplami(random_sayi)-1)) + (id + sayitoplami(id))) * (sayitoplami(random_sayi) + sayitoplami(id)));
+            sonuc = sonuc - ((sayitoplami(random_sayi)-2) * sayitoplami(random_sayi)) - (sayitoplami(sonuc-1) * sayitoplami(sonuc+sonuc));
+            sonuc = sonuc - sayitoplami(sonuc);
+            sonuc = sonuc + sayitoplami(sonuc) * sayitoplami(sonuc);
+            genel_sonuc = sonuc;
