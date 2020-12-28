@@ -9,6 +9,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Window;
 
+import com.huawei.hms.ads.banner.BannerView;
+
 import java.io.IOException;
 
 
@@ -82,9 +84,24 @@ public class MainActivity extends Activity {
             //initialize the View
             //setContentView(R.layout.main);
 
-            Intent intent = new Intent("com.kksal55.anlamli_sozler.ILK_EKRAN");
-            startActivity(intent);
-            finish();
+
+            BannerView hwBannerView = findViewById(R.id.hw_banner_view);
+            if (HmsVsGms.isHmsAvailable(MainActivity.this)) {
+                //Toast.makeText(getActivity(), "Huawei " + String.valueOf(HmsVsGms.isHmsAvailable(getActivity())), Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), SplashActivity.class));
+
+
+            } else if (HmsVsGms.isGmsAvailable(MainActivity.this)) {
+                //Toast.makeText(getActivity(), "Google " + String.valueOf(HmsVsGms.isGmsAvailable(getActivity())), Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent("com.kksal55.anlamli_sozler.ILK_EKRAN");
+                startActivity(intent);
+                finish();
+
+            }
+
+
+
         }
 
     }

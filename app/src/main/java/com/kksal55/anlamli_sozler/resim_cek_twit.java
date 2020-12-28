@@ -23,9 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -51,9 +49,7 @@ public class resim_cek_twit extends Activity{
 		 this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 	        setContentView(R.layout.res_cek);
 	        //google analytcs kodlarý
-	        Tracker t = ((GoogleAnalyticsApp) getApplication()).getTracker(GoogleAnalyticsApp.TrackerName.APP_TRACKER);
-			t.setScreenName("Anlamlý Sözler resim face");
-			t.send(new HitBuilders.AppViewBuilder().build());
+
 	        //bitiþ
 	        
 	        
@@ -275,14 +271,12 @@ try{
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		GoogleAnalytics.getInstance(resim_cek_twit.this).reportActivityStart(this);
 	}
 
 	@Override
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-		GoogleAnalytics.getInstance(resim_cek_twit.this).reportActivityStop(this);
 	}
 	private String[] SELECT_font = {"adi", "_id"};
 	private void fontgoster(){

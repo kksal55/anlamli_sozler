@@ -1,30 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kksal55.anlamli_sozler">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.kksal55.anlamli_sozler.GoogleAnalyticsApp"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Anlamlı Sözler"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="com.kksal55.anlamli_sozler.MainActivity"
+        android:theme="@style/AppTheme"
+        tools:ignore="MissingClass">
 
-            >
+        <activity
+            android:name=".giris"
+            android:label="@string/title_activity_giris"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- <activity android:name=".MainActivity" -->
+        <!-- > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
-            android:name="com.kksal55.anlamli_sozler.ilk_ekran"
-            android:label="@string/app_name" >
+            android:name=".ilk_ekran"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.ILK_EKRAN" />
 
@@ -32,8 +59,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kksal55.anlamli_sozler.bilmeceler"
-            android:label="@string/app_name" >
+            android:name=".bilmeceler"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.BILMECELER" />
 
@@ -41,68 +68,78 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kksal55.anlamli_sozler.bilmece_detay"
-            android:label="@string/app_name"
-            android:configChanges="orientation|screenSize">
+            android:name=".bilmece_detay"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.BILMECE_DETAY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-    <activity
-        android:name="com.kksal55.anlamli_sozler.bilmece_arama"
-        android:label="@string/app_name" >
-        <intent-filter>
-            <action android:name="com.kksal55.anlamli_sozler.BILMECE_ARAMA" />
-            <category android:name="android.intent.category.DEFAULT" />
-        </intent-filter>
-    </activity>
         <activity
-            android:name="com.kksal55.anlamli_sozler.resim_cek"
+            android:name=".bilmece_arama"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="com.kksal55.anlamli_sozler.BILMECE_ARAMA" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".resim_cek"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.RESIM_CEK" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kksal55.anlamli_sozler.resim_cek_twit"
+            android:name=".resim_cek_twit"
+            android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.RESIM_CEK_TWIT" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kksal55.anlamli_sozler.kategori"
-            android:label="@string/app_name" >
+            android:name=".kategori"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.KATEGORI" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.kksal55.anlamli_sozler.favori"
-            android:label="@string/app_name" >
+            android:name=".favori"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="com.kksal55.anlamli_sozler.FAVORI" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <provider
-            android:name="android.support.v4.content.FileProvider"
+            android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
 
-</application>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8786191356169416~1955600301" />
+    </application>
+
 </manifest>

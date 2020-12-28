@@ -38,12 +38,11 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+import com.huawei.hms.ads.AdParam;
+import com.huawei.hms.ads.banner.BannerView;
+
 
 //import com.google.analytics.*;
-
 
 public class bilmece_detay extends Activity {
    private DatabaseHelper kategoriler;
@@ -56,6 +55,7 @@ public class bilmece_detay extends Activity {
    private InterstitialAd gecisReklam;
    private String[] SELECT_OKU = {"_id","bil_id"};
     private RelativeLayout realscr;
+    private com.huawei.hms.ads.InterstitialAd HMSinterstitialAd;
 
    @Override
    protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +69,34 @@ public class bilmece_detay extends Activity {
        img_hit_ekle_islem = (ImageView) findViewById(R.id.btn_hit_ekle);
        img_karisik = (ImageView) findViewById(R.id.karisik);
         //////////////reklam////////////////
-       AdView adView = (AdView) this.findViewById(R.id.adView);
-       AdRequest adRequest = new AdRequest.Builder().build();
-       adView.loadAd(adRequest); //adView i yüklüyoruz
+
+       HMSloadInterstitialAd();
+       BannerView hwBannerView = findViewById(R.id.hw_banner_view);
+       if (HmsVsGms.isHmsAvailable(bilmece_detay.this)) {
+           //Toast.makeText(getActivity(), "Huawei " + String.valueOf(HmsVsGms.isHmsAvailable(getActivity())), Toast.LENGTH_SHORT).show();
+           hwBannerView.setVisibility(View.VISIBLE);
+           AdParam adParam = new AdParam.Builder().build();
+           hwBannerView.loadAd(adParam);
+           hwBannerView.setAdListener(new com.huawei.hms.ads.AdListener() {
+               @Override
+               public void onAdLoaded() {
+
+               }
+           });
+
+
+       } else if (HmsVsGms.isGmsAvailable(this)) {
+           //Toast.makeText(getActivity(), "Google " + String.valueOf(HmsVsGms.isGmsAvailable(getActivity())), Toast.LENGTH_SHORT).show();
+
+           AdView adView = (AdView) this.findViewById(R.id.adView);
+           adView.setVisibility(View.VISIBLE);
+           AdRequest adRequest = new AdRequest.Builder()
+                   .addTestDevice("485B9A10300F9E8FD447CBBF63730B5E")
+                   .build();
+           adView.loadAd(adRequest); //adView i yüklüyoruz
+
+       }
+
 
        gecisReklam = new InterstitialAd(this);
        gecisReklam.setAdUnitId("ca-app-pub-8786191356169416/7862533102");//Reklam Ýd miz.Admob da oluþturduðumuz geçiþ reklam id si
@@ -101,12 +126,7 @@ public class bilmece_detay extends Activity {
        str_katID = i.getStringExtra("deg_bil_id");
        str_katname = i.getStringExtra("kategori");
        karisik_mod=i.getStringExtra("kategori");;
-       //google analytcs kodlarý
-       Tracker t = ((GoogleAnalyticsApp) getApplication()).getTracker(GoogleAnalyticsApp.TrackerName.APP_TRACKER);
-       t.setScreenName("Anlamlý Sözler Detay");
-       t.send(new HitBuilders.AppViewBuilder().build());
-      // Toast.makeText(bilmece_detay.this, String.valueOf(str_katname), Toast.LENGTH_SHORT).show();
-       //bitiþ
+
         try{
                 if (str_katname.equals("karýþýk_fýkra_oku_rnd"))
                 {
@@ -683,8 +703,8 @@ public class bilmece_detay extends Activity {
    public void loadGecisReklam() {
          AdRequest adRequest = new AdRequest.Builder()
              .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-             .addTestDevice("B3EEABB8EE11C2BE770B684D95219E")
-             .build();
+                 .addTestDevice("485B9A10300F9E8FD447CBBF63730B5E")
+                 .build();
          gecisReklam.loadAd(adRequest);
        }
    public void showGecisReklam() {
@@ -696,10 +716,36 @@ public class bilmece_detay extends Activity {
          }
        }
    public void reklam_gosterim_kontrol() {
-            int id_sayi_int = modulo(Integer.parseInt(str_katID),15);
+            int id_sayi_int = modulo(Integer.parseInt(str_katID),8);
             if (id_sayi_int==0){
-                showGecisReklam();
+
+
+
+
+
+                if (HmsVsGms.isHmsAvailable(bilmece_detay.this)) {
+
+                    HMSshowInterstitial();
+
+                } else if (HmsVsGms.isGmsAvailable(bilmece_detay.this)) {
+                    //Toast.makeText(getActivity(), "Google " + String.valueOf(HmsVsGms.isGmsAvailable(getActivity())), Toast.LENGTH_SHORT).show();
+
+                    showGecisReklam();
+
+                }
+
+
+
+
             }
+
+
+
+
+
+
+
+
            }
    public int modulo( int m, int n ){
                int mod =  m % n ;
@@ -709,13 +755,11 @@ public class bilmece_detay extends Activity {
    protected void onStart() {
        // TODO Auto-generated method stub
        super.onStart();
-       GoogleAnalytics.getInstance(bilmece_detay.this).reportActivityStart(this);
    }
    @Override
    protected void onStop() {
        // TODO Auto-generated method stub
        super.onStop();
-       GoogleAnalytics.getInstance(bilmece_detay.this).reportActivityStop(this);
    }
     public void kaldigin_yer(){
         SQLiteDatabase db = kategoriler.getWritableDatabase();
@@ -798,4 +842,59 @@ if (!karisik_mod.equals("karýþýk_fýkra_oku_rnd")) {
             realscr.setBackgroundResource(R.drawable.arkaorta2);
         }
     }
+
+    private void HMSloadInterstitialAd() {
+        HMSinterstitialAd = new com.huawei.hms.ads.InterstitialAd(this);
+        HMSinterstitialAd.setAdId("y881y7xznp");
+        HMSinterstitialAd.setAdListener(HMSadListenervideo);
+
+        AdParam adParam = new AdParam.Builder().build();
+        HMSinterstitialAd.loadAd(adParam);
+    }
+
+    private void HMSshowInterstitial() {
+        // Display an interstitial ad.
+        if (HMSinterstitialAd != null && HMSinterstitialAd.isLoaded()) {
+            HMSinterstitialAd.show();
+        } else {
+            //Toast.makeText(this, "Ad did not load", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private com.huawei.hms.ads.AdListener HMSadListenervideo = new com.huawei.hms.ads.AdListener() {
+        @Override
+        public void onAdLoaded() {
+            super.onAdLoaded();
+            //Toast.makeText(OrtakFragmentActivity.this, "Ad loaded", Toast.LENGTH_SHORT).show();
+            // Display an interstitial ad.
+            //HMSshowInterstitial();
+        }
+
+        @Override
+        public void onAdFailed(int errorCode) {
+            //Toast.makeText(OrtakFragmentActivity.this, "Ad load failed with error code: " + errorCode, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onAdClosed() {
+            HMSloadInterstitialAd();
+            super.onAdClosed();
+            //Toast.makeText(OrtakFragmentActivity.this, "Ad closed", Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onAdClicked() {
+            HMSloadInterstitialAd();
+            //Toast.makeText(OrtakFragmentActivity.this, "Ad Click", Toast.LENGTH_SHORT).show();
+            super.onAdClicked();
+        }
+
+        @Override
+        public void onAdOpened() {
+            HMSloadInterstitialAd();
+            //Toast.makeText(OrtakFragmentActivity.this, "Ad opened", Toast.LENGTH_SHORT).show();
+            super.onAdOpened();
+        }
+    };
+
 }

@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/anlamli v9.iml" filepath="$PROJECT_DIR$/.idea/modules/anlamli v9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/anlamli_sozler.iml" filepath="$PROJECT_DIR$/.idea/modules/anlamli_sozler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/anlamli_sozler.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/anlamli_sozler.app.iml" />
     </modules>
   </component>
 </project>

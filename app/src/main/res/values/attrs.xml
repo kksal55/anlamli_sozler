@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TextViewFont">
+        <attr name="customFont" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="PagerIndicator">
+        <!-- indicator visibility -->
+        <attr name="visibility" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+
+        <attr name="shape" format="enum">
+            <enum value="0" name="oval"/>
+            <enum value="1" name="rect"/>
+        </attr>
+        <attr name="colorPrimary" format="color"/>
+
+        <attr name="colorPrimaryDark" format="color"/>
+        <attr name="colorAccent" format="color"/>
+
+        <attr name="selected_color" format="color"/>
+        <attr name="unselected_color" format="color"/>
+
+        <!-- indicator style -->
+        <attr name="selected_drawable" format="reference"/>
+        <attr name="unselected_drawable" format="reference"/>
+
+        <attr name="selected_width" format="dimension"/>
+        <attr name="selected_height" format="dimension"/>
+
+        <attr name="unselected_width" format="dimension"/>
+        <attr name="unselected_height" format="dimension"/>
+
+        <attr name="padding_left" format="dimension"/>
+        <attr name="padding_right" format="dimension"/>
+        <attr name="padding_top" format="dimension"/>
+        <attr name="padding_bottom" format="dimension"/>
+
+        <attr name="selected_padding_left" format="dimension"/>
+        <attr name="selected_padding_right" format="dimension"/>
+        <attr name="selected_padding_top" format="dimension"/>
+        <attr name="selected_padding_bottom" format="dimension"/>
+
+        <attr name="unselected_padding_left" format="dimension"/>
+        <attr name="unselected_padding_right" format="dimension"/>
+        <attr name="unselected_padding_top" format="dimension"/>
+        <attr name="unselected_padding_bottom" format="dimension"/>
+
+
+    </declare-styleable>
+    <declare-styleable name="WaveSideBarView">
+        <attr name="sidebarTextColor" format="color|reference"/>
+        <attr name="sidebarBackgroundColor" format="color|reference"/>
+        <attr name="sidebarChooseTextColor" format="color|reference"/>
+        <attr name="sidebarTextSize" format="dimension"/>
+        <attr name="sidebarLargeTextSize" format="dimension"/>
+        <attr name="sidebarRadius" format="dimension"/>
+        <attr name="sidebarBallRadius" format="dimension"/>
+    </declare-styleable>
+</resources>

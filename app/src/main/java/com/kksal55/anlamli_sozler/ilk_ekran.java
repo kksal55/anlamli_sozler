@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.view.View;
@@ -75,7 +76,7 @@ public class ilk_ekran extends Activity {
         ((ImageButton)findViewById(R.id.btn_cikis)).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                finish();
+                onBackPressed();
 
             }
         });
@@ -243,4 +244,16 @@ public class ilk_ekran extends Activity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        if(Build.VERSION.SDK_INT>=16 && Build.VERSION.SDK_INT<21){
+            finishAffinity();
+        } else if(Build.VERSION.SDK_INT>=21){
+            finishAndRemoveTask();
+        }
+
+        super.onBackPressed();
+    }
+
 }

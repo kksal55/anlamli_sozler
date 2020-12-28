@@ -111,17 +111,12 @@
         android:text="Bu kategorideki tüm bilmeceler"
         android:visibility="gone"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_below="@+id/adView"
+        android:layout_below="@+id/reklamlar"
         style="@style/dar"
 
         />
 
-<!--    <RelativeLayout
-        android:id="@+id/bil_anagurup"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:layout_below="@+id/adView">-->
+
 
 
     <ImageButton
@@ -221,7 +216,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        android:layout_above="@+id/adView"
+        android:layout_above="@+id/reklamlar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
@@ -291,14 +286,39 @@
             android:layout_alignParentStart="true"/>
     </RelativeLayout>
 
-    <com.google.android.gms.ads.AdView android:id="@+id/adView"
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-        ads:adUnitId="ca-app-pub-8786191356169416/3432333507"
-           ads:adSize="BANNER"
+    <LinearLayout
+        android:id="@+id/reklamlar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/btn_onceki_fikra"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_alignParentStart="true"
+        android:orientation="vertical">
+
+
+        <com.google.android.gms.ads.AdView android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adUnitId="ca-app-pub-8786191356169416/3432333507"
+            ads:adSize="SMART_BANNER"
+            android:visibility="gone"
+/>
+
+        <com.huawei.hms.ads.banner.BannerView
+            android:id="@+id/hw_banner_view"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adId="d4j75otgpj"
+            ads:bannerSize="BANNER_SIZE_SMART"/>
+
+
+    </LinearLayout>
+
+
+
 
     <ImageButton
                      android:id="@+id/btn_sonraki_fikra"

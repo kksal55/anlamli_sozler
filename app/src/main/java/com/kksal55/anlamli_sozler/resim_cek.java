@@ -17,7 +17,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -25,9 +25,7 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -71,9 +69,7 @@ public class resim_cek extends Activity{
 			askPermissions();
 		}
 	        //google analytcs kodlarý
-	        Tracker t = ((GoogleAnalyticsApp) getApplication()).getTracker(GoogleAnalyticsApp.TrackerName.APP_TRACKER);
-			t.setScreenName("Anlamlý Sözler Resim");
-			t.send(new HitBuilders.AppViewBuilder().build());
+
 	        //bitiþ
 	        kategoriler = new DatabaseHelper(this);
 	        tv_fikraname = (TextView) findViewById(R.id.detay_baslik);
@@ -270,14 +266,12 @@ public class resim_cek extends Activity{
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		GoogleAnalytics.getInstance(resim_cek.this).reportActivityStart(this);
 	}
 
 	@Override
 	protected void onStop() {
 		// TODO Auto-generated method stub
 		super.onStop();
-		GoogleAnalytics.getInstance(resim_cek.this).reportActivityStop(this);
 		kategoriler.close();
 	}
 	@Override
